@@ -4,12 +4,18 @@ import "./styles.css";
 
 export default function App() {
   const user = fetchUser();
-
+  console.log(user);
   return (
     <div className="App">
       <nav className="navbar">
         <Logo />
+        {user.isLoggedIn === false ? (
+          <button>Login</button>
+        ) : (
+          <button>Logout</button>
+        )}
 
+        <p></p>
         {/* Write your code : 
           - if the user is not logged in : render a button that says "login"
 
@@ -20,8 +26,6 @@ export default function App() {
 
         */}
       </nav>
-
-
     </div>
   );
 }
